@@ -71,7 +71,7 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane active" id="data">
 
           <div style="display: flow-root;margin-top: 15px;">
-                <div id="title" style="text-align: center"><h3>Europe pyramid</h3></div>
+                <div id="title" style="text-align: center"><h3>Europe [persons]</h3></div>
                 <div id="chartdiv"></div>
                 <div id="chartdiv2"></div>
                 <table id="dataTable"></table>
@@ -82,7 +82,6 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}
@@ -199,10 +198,11 @@ layout: frontpage
   };
   mapChart.seriesContainer.events.disableType("doublehit");
   mapChart.chartContainer.background.events.disableType("doublehit");
+  mapChart.chartContainer.wheelable = false;
 
   var polygonSeries = mapChart.series.push(new am4maps.MapPolygonSeries())
   polygonSeries.useGeodata = true;
-  polygonSeries.include = ["PL","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE","HU"];
+  polygonSeries.include = ["PL","NO","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE","HU"];
 
   var selectedStateId = "EU";
   var selectedPolygon;
@@ -264,7 +264,7 @@ layout: frontpage
       selectedStateId = id;
       selectedPolygon = polygon;
 
-      $("#title h3").html(stateName + " pyramid");
+      $("#title h3").html(stateName + " [persons]");
     }else{
       alert('No data for this country');
 

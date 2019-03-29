@@ -97,7 +97,7 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
+          <a class="usa-button" href="{{ site.baseurl }}/assets/pdf/en/{{page.indicator | replace: ".", "-"}}.pdf">Download metadata for {{ page.indicator | remove: ".0" }}</a>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}

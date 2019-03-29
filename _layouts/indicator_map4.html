@@ -71,7 +71,7 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane active" id="data">
 
           <div style="display: flow-root;margin-top: 15px;">
-                <div id="title" style="text-align: center"><h3>Europe chart</h3></div>
+                <div id="title" style="text-align: center"><h3>Europe [kilos per capita per year]</h3></div>
                 <div id="chartdiv"></div>
                 <div id="chartdiv2"></div>
                 <table id="dataTable"></table>
@@ -82,7 +82,6 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}
@@ -183,10 +182,11 @@ layout: frontpage
   };
   mapChart.seriesContainer.events.disableType("doublehit");
   mapChart.chartContainer.background.events.disableType("doublehit");
+  mapChart.chartContainer.wheelable = false;
 
   var polygonSeries = mapChart.series.push(new am4maps.MapPolygonSeries())
   polygonSeries.useGeodata = true;
-  polygonSeries.include = ["PL","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE","NL"];
+  polygonSeries.include = ["PL","NO","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE","NL"];
 
   var selectedStateId = "EU";
   var selectedPolygon;
@@ -208,7 +208,7 @@ layout: frontpage
       $("#dataTable").html('<thead><tr><th></th><th>2010</th><th>2011</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th><th>2017</th></tr></thead><tbody></tbody>');
       $("#dataTable").find('tbody').append( "<tr class="+selectedStateId+"><td align='center'>"+"Fruits"+"</td><td align='center'>"+stateData[selectedStateId][0].fruits+"</td><td align='center'>"+stateData[selectedStateId][1].fruits+"</td><td align='center'>"+stateData[selectedStateId][2].fruits+"</td><td align='center'>"+stateData[selectedStateId][3].fruits+"</td><td align='center'>"+stateData[selectedStateId][4].fruits+"</td><td align='center'>"+stateData[selectedStateId][5].fruits+"</td><td align='center'>"+stateData[selectedStateId][6].fruits+"</td><td align='center'>"+stateData[selectedStateId][7].fruits+"</td></tr>" );
       $("#dataTable").find('tbody').append( "<tr class="+selectedStateId+"><td align='center'>"+"Vegetables"+"</td><td align='center'>"+stateData[selectedStateId][0].vegetables+"</td><td align='center'>"+stateData[selectedStateId][1].vegetables+"</td><td align='center'>"+stateData[selectedStateId][2].vegetables+"</td><td align='center'>"+stateData[selectedStateId][3].vegetables+"</td><td align='center'>"+stateData[selectedStateId][4].vegetables+"</td><td align='center'>"+stateData[selectedStateId][5].vegetables+"</td><td align='center'>"+stateData[selectedStateId][6].vegetables+"</td><td align='center'>"+stateData[selectedStateId][7].vegetables+"</td></tr>" );
-      
+
     }
   })
 
@@ -245,7 +245,7 @@ layout: frontpage
       selectedStateId = id;
       selectedPolygon = polygon;
 
-      $("#title h3").html(stateName + " chart");
+      $("#title h3").html(stateName + " [kilos per capita per year]");
     }else{
       alert('No data for this country');
 

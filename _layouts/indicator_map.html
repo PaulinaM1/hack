@@ -70,7 +70,7 @@ layout: frontpage
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="data">
       <div style="display: flow-root;margin-top: 15px;">
-            <div id="title" style="text-align: center"><h3>EU chart</h3><button id="sex"><i class="fa fa-child"></i></button></div>
+            <div id="title" style="text-align: center"><h3>AT [persons]</h3><button id="sex"><i class="fa fa-child"></i></button></div>
             <div id="chartdiv"></div>
             <div id="chartdiv2"></div>
             <table id="dataTable"></table>
@@ -80,7 +80,6 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}
@@ -148,7 +147,7 @@ function Chartss(stateData) {
   femaleChart.paddingLeft = '80px';
   femaleChart.paddingRight = '70px';
 
-  femaleChart.data = stateData["EU"];
+  femaleChart.data = stateData["AT"];
 
   var femaleSeries = femaleChart.series.push(new am4charts.PieSeries());
   femaleSeries.dataFields.category = "name";
@@ -173,12 +172,13 @@ function Chartss(stateData) {
   };
   mapChart.seriesContainer.events.disableType("doublehit");
   mapChart.chartContainer.background.events.disableType("doublehit");
+  mapChart.chartContainer.wheelable = false;
 
   var polygonSeries = mapChart.series.push(new am4maps.MapPolygonSeries())
   polygonSeries.useGeodata = true;
-  polygonSeries.include = ["PL","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
+  polygonSeries.include = ["PL","NO","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
 
-  var selectedStateId = "EU";
+  var selectedStateId = "AT";
   var selectedPolygon;
   var selectedStateName;
 
@@ -203,16 +203,16 @@ function Chartss(stateData) {
 
   function showState(id, stateName, polygon) {
     if(selectedStateId != id){
-
+      if (typeof stateData[id]!='undefined'){
       var newData = stateData[id];
 
       if (selectedPolygon) {
         selectedPolygon.isActive = false;
       }
 
-      for (var i = 0; i < femaleChart.data.length; i++) {
-        femaleChart.data[i].total = newData[i].total;
-      }
+
+        femaleChart.data = newData;
+
 
       femaleChart.invalidateRawData();
 
@@ -221,10 +221,14 @@ function Chartss(stateData) {
       selectedPolygon = polygon;
 
 
-      $("#title h3").html(stateName + " chart");
+      $("#title h3").html(stateName + " [persons]");
 
       //$("."+id+" td").css("background-color", "yellow");
-     }
+
+   }else{
+     alert('No data for this country');
+   }
+ }
   }
 
   $("#dataTable").html('<thead><tr><th>Country</th><th>Underweight</th><th>Normal</th><th>Overweight</th><th>Pre-obese</th><th>Obese</th></tr></thead><tbody></tbody>');

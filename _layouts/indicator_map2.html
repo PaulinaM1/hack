@@ -73,11 +73,12 @@ layout: frontpage
       <ul class="yr nav nav-tabs" style="width: 6%;float: left;height:500px;min-width: 65px;">
         <li class="nav-item" style="width: 100%;margin-top: 0px;"><a class="yr nav-link active" href="#2017" aria-controls="2017" role="tab" data-toggle="tab">2017</a></li>
         <li class="nav-item" style="width: 100%;"><a class="yr nav-link" href="#2016" aria-controls="2016" role="tab" data-toggle="tab">2016</a></li>
+        <li class="nav-item" style="width: 100%;"><a class="yr nav-link" href="#2016" aria-controls="2016" role="tab" data-toggle="tab">2015</a></li>
       </ul>
 
 
           <div style="display: flow-root;margin-top: 15px;">
-                <div id="title" style="text-align: center"><h3>Europe chart in 2017</h3></div>
+                <div id="title" style="text-align: center"><h3>Ireland in 2017 [persons]</h3></div>
                 <div id="chartdiv"></div>
                 <div id="chartdiv2"></div>
                 <table id="dataTable"></table>
@@ -88,7 +89,6 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}
@@ -139,7 +139,7 @@ $('.yr.nav-link').click(function() {
   })();
   stateData=stateData_all[yr][0]['total'][0];
   Chartss(stateData,yr);
-  $("#title h3").html("Europe chart in " + yr);
+  $("#title h3").html("Ireland in " + yr +" [persons]");
 });
 
 
@@ -158,7 +158,7 @@ function Chartss(stateData,yr) {
   Chart.paddingLeft = '80px';
   Chart.paddingRight = '70px';
 
-  Chart.data = stateData["EU"];
+  Chart.data = stateData["IE"];
 
   var Series = Chart.series.push(new am4charts.PieSeries());
   Series.dataFields.category = "name";
@@ -188,12 +188,13 @@ function Chartss(stateData,yr) {
   };
   mapChart.seriesContainer.events.disableType("doublehit");
   mapChart.chartContainer.background.events.disableType("doublehit");
+  mapChart.chartContainer.wheelable = false;
 
   var polygonSeries = mapChart.series.push(new am4maps.MapPolygonSeries())
   polygonSeries.useGeodata = true;
-  polygonSeries.include = ["PL","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
+  polygonSeries.include = ["PL","NO","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
 
-  var selectedStateId = "EU";
+  var selectedStateId = "IE";
   var selectedPolygon;
   var selectedStateName;
 
@@ -226,13 +227,18 @@ function Chartss(stateData,yr) {
              selectedPolygon.isActive = false;
            }
            for (var i = 0; i < Chart.data.length; i++) {
-             Chart.data[i].total = newData[i].total;
+             if(newData[i].total!='.'){
+               Chart.data[i].total = newData[i].total;
+             }else{
+               Chart.data[i].total = 0;
+               Chart.data[i].tooltipText = ".";
+             }
            }
            Chart.invalidateRawData();
            selectedStateName = stateName;
            selectedStateId = id;
            selectedPolygon = polygon;
-           $("#title h3").html(stateName + " chart in "+yr);
+           $("#title h3").html(stateName + " " + yr +" [persons]");
          }else{
            alert('No data for this country');
          }
@@ -242,9 +248,9 @@ function Chartss(stateData,yr) {
      }
 
 
-  $("#dataTable").html('<thead><tr><th>Country</th><th>Underweight</th><th>Normal</th><th>Overweight</th><th>Pre-obese</th><th>Obese</th></tr></thead><tbody></tbody>');
+  $("#dataTable").html('<thead><tr><th>Country</th><th>Overweight</th><th>Obese</th></tr></thead><tbody></tbody>');
   for (item in stateData) {
-    $("#dataTable").find('tbody').append( "<tr class="+item+"><td>"+item+"</td><td>"+stateData[item][0].total+"</td><td>"+stateData[item][1].total+"</td><td>"+stateData[item][2].total+"</td><td>"+stateData[item][3].total+"</td><td>"+stateData[item][4].total+"</td></tr>" );
+    $("#dataTable").find('tbody').append( "<tr class="+item+"><td>"+item+"</td><td>"+stateData[item][0].total+"</td><td>"+stateData[item][1].total+"</td></tr>" );
   }
 }
 

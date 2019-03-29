@@ -13,13 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Hackathon
+title: Hackathon EU BD - Statistics Poland
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
+description: Statistics Poland
+baseurl: "https://statisticspoland.github.io/EU_BD_Hackathon" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
@@ -49,43 +46,18 @@ prose:
             element: text
             label2: "Name of the indicator"
             scope: global
-      - name: "zadanie"
-        field:
-            element: textarea
-            label2: "Target"
-            scope: global
-      - name: "definicja"
-        field:
-            element: textarea
-            label2: "Definition"
-            scope: global
       - name: "jednostka_prezentacji"
         field:
             element: text
-            label2: "Unit"
-            scope: global
-      - name: "dostepne_wymiary"
-        field:
-            element: textarea
-            label2: "Available dimensions"
+            label2: "Measure unit"
             scope: global
       - name: "wyjasnienia_metodologiczne"
         field:
             element: textarea
-            label2: "Methodological explanations"
+            label2: "Description of the indicator"
             scope: global
       - name: "zrodlo_danych"
         field:
             element: text
-            label2: "Source of data"
-            scope: global
-      - name: "czestotliwosc_dostępnosc_danych"
-        field:
-            element: textarea
-            label2: "Data availability"
-            scope: global
-      - name: "uwagi"
-        field:
-            element: textarea
-            label2: "Notes"
+            label2: "Data sources"
             scope: global

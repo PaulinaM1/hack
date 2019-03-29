@@ -71,12 +71,12 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane active" id="data">
 
       <ul class="yr nav nav-tabs" style="width: 6%;float: left;height:500px;min-width: 65px;">
-        <li class="nav-item" style="width: 100%;margin-top: 0px;"><a class="yr nav-link active" href="#2017" aria-controls="2017" role="tab" data-toggle="tab">2017</a></li>
-        <li class="nav-item" style="width: 100%;"><a class="yr nav-link" href="#2016" aria-controls="2016" role="tab" data-toggle="tab">2016</a></li>
+        <li class="nav-item" style="width: 100%;margin-top: 0px;"><a class="yr nav-link active" href="#2013" aria-controls="2013" role="tab" data-toggle="tab">2013</a></li>
+        <li class="nav-item" style="width: 100%;"><a class="yr nav-link" href="#2012" aria-controls="2012" role="tab" data-toggle="tab">2012</a></li>
       </ul>
 
           <div style="display: flow-root;margin-top: 15px;">
-                <div id="title" style="text-align: center"><h3>Europe chart in 2017</h3></div>
+                <div id="title" style="text-align: center"><h3>Europe in 2013 [grammes per capita per day]</h3></div>
                 <div id="chartdiv"></div>
                 <div id="chartdiv2"></div>
                 <table id="dataTable"></table>
@@ -87,7 +87,6 @@ layout: frontpage
     <div role="tabpanel" class="tab-pane" id="metadata">
       <div class="metadata-table">
           <h2>Information about indicator</h2>
-          <p><button type="button" href="#" style="padding: 8px;">Download metadata for {{ page.indicator | remove: ".0" }}</button></p>
           <table>
             {% for indicator_metadata in site.prose.metadata._indicators %}
               {% if indicator_metadata.field.scope == "global" %}
@@ -124,7 +123,7 @@ layout: frontpage
         return json;
   })();
 
-  yr='2017';
+  yr='2013';
   Chartss(stateData,yr,iconPath,iconPath2,iconPath3);
 
 
@@ -143,7 +142,7 @@ layout: frontpage
           return json;
     })();
     Chartss(stateData,yr,iconPath,iconPath2,iconPath3);
-    $("#title h3").html("Europe chart in " + yr);
+    $("#title h3").html("Europe in " + yr+" [grammes per capita per day]");
   });
 
 
@@ -190,10 +189,11 @@ function Chartss(stateData,yr) {
   };
   mapChart.seriesContainer.events.disableType("doublehit");
   mapChart.chartContainer.background.events.disableType("doublehit");
+  mapChart.chartContainer.wheelable = false;
 
   var polygonSeries = mapChart.series.push(new am4maps.MapPolygonSeries())
   polygonSeries.useGeodata = true;
-  polygonSeries.include = ["PL","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
+  polygonSeries.include = ["PL","NO","BG","FR","DK","LU","GE","IT","IE","GB","GR","PT","ES","CY","MT","RO","HR","SI","HU","SK","AT","CZ","BE","LT","LV","EE","FI","SE","DE"];
 
   var selectedStateId = "EU";
   var selectedPolygon;
@@ -221,8 +221,8 @@ function Chartss(stateData,yr) {
 
   function showState(id, stateName, polygon) {
        if(selectedStateId != id){
-         if (typeof stateData['2017'][0][id]!='undefined'){
-           var newData = stateData['2017'][0][id];
+         if (typeof stateData['2013'][0][id]!='undefined'){
+           var newData = stateData['2013'][0][id];
            if (selectedPolygon) {
              selectedPolygon.isActive = false;
            }
@@ -233,7 +233,7 @@ function Chartss(stateData,yr) {
            selectedStateName = stateName;
            selectedStateId = id;
            selectedPolygon = polygon;
-           $("#title h3").html(stateName + " chart in "+yr);
+           $("#title h3").html(stateName + " in "+yr+" [grammes per capita per day]");
          }else{
            alert('No data for this country');
          }
@@ -242,9 +242,9 @@ function Chartss(stateData,yr) {
 
      }
 
-     $("#dataTable").html('<thead><tr><th>Country</th><th>Fat</th><th>Protein</th><th>Else</th></tr></thead><tbody></tbody>');
+     $("#dataTable").html('<thead><tr><th>Country</th><th>Fat</th><th>Protein</th></tr></thead><tbody></tbody>');
      for (item in stateData[yr][0]) {
-       $("#dataTable").find('tbody').append( "<tr class="+item+"><td>"+item+"</td><td>"+stateData[yr][0][item][0].value+"</td><td>"+stateData[yr][0][item][1].value+"</td><td>"+stateData[yr][0][item][2].value+"</td></tr>" );
+       $("#dataTable").find('tbody').append( "<tr class="+item+"><td>"+item+"</td><td>"+stateData[yr][0][item][0].value+"</td><td>"+stateData[yr][0][item][1].value+"</td></tr>" );
      }
 }
 </script>
