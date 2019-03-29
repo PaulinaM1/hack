@@ -61,3 +61,6 @@ prose:
             element: text
             label2: "Data sources"
             scope: global
+    users:
+    - login: "pika1804"
+      user: "Paulina"
