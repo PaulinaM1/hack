@@ -1,0 +1,50 @@
+{
+  "2017":[
+    {
+      "EU":[{
+          "name": "Fat",
+          "value": 354
+      }, {
+          "name": "Protein",
+          "value": 245
+      }, {
+          "name": "Something else",
+          "value": 187
+      }],
+      "PL":[{
+        "name": "Fat",
+        "value": 20
+      }, {
+        "name": "Protein",
+        "value": 12
+      }, {
+        "name": "Something else",
+        "value": 55
+      }]
+  }
+],
+"2016":[
+  {
+    "EU":[{
+        "name": "Fat",
+        "value": 2016354
+    }, {
+        "name": "Protein",
+        "value": 2016245
+    }, {
+        "name": "Something else",
+        "value": 2016187
+    }],
+    "PL":[{
+      "name": "Fat",
+      "value": 201620
+    }, {
+      "name": "Protein",
+      "value": 201612
+    }, {
+      "name": "Something else",
+      "value": 201655
+    }]
+}
+]
+}
