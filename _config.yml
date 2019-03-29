@@ -38,7 +38,7 @@ collections:
     output: true
 
 prose:
-  ignore: ['/assets', '/_includes', '/_layouts', '/scripts', '/sass' ]
+  ignore: ['/assets', '/_includes', '/_layouts', '/scripts', '/sass', '/_posts',  '/_sass', '/_site', '/game', '/indicator', '/json', '404.html', '_config.yml', 'index.html', 'search.md' ]
   metadata:
     _indicators:
       - name: "nazwa_wskaznika"
