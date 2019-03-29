@@ -1,32 +1,32 @@
 {
     "total":[{
-          "name": "work",
+          "name": "workiiiii",
           "value": 143.9
       }, {
-          "name": "private",
+          "name": "privateiiii",
           "value": 219.1
       }, {
-          "name": "other",
+          "name": "otheriiii",
           "value": 115.8
       }],
       "male":[{
-        "name": "work",
-        "value": 46.6
+        "name": "workiiiii",
+        "value": 146.6
       }, {
-        "name": "private",
+        "name": "privateiiii",
         "value": 115.5
       }, {
-        "name": "other",
-        "value": 6.1
+        "name": "otheriiii",
+        "value": 116.1
       }],
       "female":[{
-        "name": "work",
-        "value": 43.4
+        "name": "workiiiii",
+        "value": 143.4
       }, {
-        "name": "private",
+        "name": "privateiiii",
         "value": 119.8
       }, {
-        "name": "other",
-        "value": 5.6
+        "name": "otheriiii",
+        "value": 115.6
       }]
 }
