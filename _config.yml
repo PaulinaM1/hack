@@ -43,7 +43,7 @@ prose:
     _indicators:
       - name: "nazwa_wskaznika"
         field:
-            element: text
+            element: hidden
             label2: "Name of the indicator"
             scope: global
       - name: "jednostka_prezentacji"
