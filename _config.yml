@@ -141,6 +141,41 @@ prose:
             element: textarea
             label: "Notes"
             scope: global
+      - name: "en_graph_title"
+        field:
+            element: hidden
+            label: "graph_title"
+            scope: global
+      - name: "en_title"
+        field:
+            element: hidden
+            label: "title"
+            scope: global
+      - name: "en_jednostka"
+        field:
+            element: hidden
+            label: "jednostka"
+            scope: global
+      - name: "pl_graph_title"
+        field:
+            element: hidden
+            label: "graph_title"
+            scope: global
+      - name: "pl_title"
+        field:
+            element: hidden
+            label: "title"
+            scope: global
+      - name: "pl_jednostka"
+        field:
+            element: hidden
+            label: "jednostka"
+            scope: global
+      - name: "translation_id"
+        field:
+            element: hidden
+            label: "translation_id"
+            scope: global
     _metadane_krajowe:
       - name: "pl_nazwa_wskaznika"
         field:
@@ -241,4 +276,39 @@ prose:
         field:
             element: textarea
             label: "Notes"
+            scope: global
+      - name: "en_graph_title"
+        field:
+            element: hidden
+            label: "graph_title"
+            scope: global
+      - name: "en_title"
+        field:
+            element: hidden
+            label: "title"
+            scope: global
+      - name: "en_jednostka"
+        field:
+            element: hidden
+            label: "jednostka"
+            scope: global
+      - name: "pl_graph_title"
+        field:
+            element: hidden
+            label: "graph_title"
+            scope: global
+      - name: "pl_title"
+        field:
+            element: hidden
+            label: "title"
+            scope: global
+      - name: "pl_jednostka"
+        field:
+            element: hidden
+            label: "jednostka"
+            scope: global
+      - name: "translation_id"
+        field:
+            element: hidden
+            label: "translation_id"
             scope: global
