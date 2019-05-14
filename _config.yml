@@ -51,13 +51,13 @@ prose:
             element: text
             label2: "Measure unit"
             scope: global
-        - name: "wyjasnienia_metodologiczne"
-          field:
-              element: textarea
-              label2: "Description of the indicator"
-              scope: global
-        - name: "zrodlo_danych"
-          field:
-              element: text
-              label2: "Data sources"
-              scope: global
+      - name: "wyjasnienia_metodologiczne"
+        field:
+            element: textarea
+            label2: "Description of the indicator"
+            scope: global
+      - name: "zrodlo_danych"
+        field:
+            element: text
+            label2: "Data sources"
+            scope: global
