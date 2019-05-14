@@ -44,12 +44,25 @@ prose:
       - name: "pl_nazwa_wskaznika"
         field:
             element: text
-            label: "Nazwa wskaźnika"
+            label: "Nazwa wskaźnika PL"
             label2: "Name of the indicator"
             scope: global
       - name: "pl_wyjasnienia_metodologiczne"
         field:
             element: textarea
-            label: "Wyjaśnienia metodologiczne"
+            label: "Wyjaśnienia metodologiczne PL"
             label2: "Methodological explanations"
             scope: global
+      - name: "en_nazwa_wskaznika"
+        field:
+            element: text
+            label: "Nazwa wskaźnika EN"
+            label2: "Name of the indicator"
+            scope: global
+      - name: "en_wyjasnienia_metodologiczne"
+        field:
+            element: textarea
+            label: "Wyjaśnienia metodologiczne EN"
+            label2: "Methodological explanations"
+            scope: global
+      
