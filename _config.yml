@@ -41,24 +41,23 @@ prose:
   ignore: ['/assets', '/_includes', '/_layouts', '/scripts', '/sass', '/_posts',  '/_sass', '/_site', '/game', '/indicator', '404.html', '_config.yml', 'index.html', 'search.md' ]
   metadata:
     _metadane_globalne:
-      pl:
-        - name: "nazwa_wskaznika"
-          field:
-              element: text
-              label2: "Name of the indicator"
-              scope: global
-        - name: "jednostka_prezentacji"
-          field:
-              element: text
-              label2: "Measure unit"
-              scope: global
-        - name: "wyjasnienia_metodologiczne"
-          field:
-              element: textarea
-              label2: "Description of the indicator"
-              scope: global
-        - name: "zrodlo_danych"
-          field:
-              element: text
-              label2: "Data sources"
-              scope: global
+      - name: "pl:nazwa_wskaznika"
+        field:
+            element: text
+            label2: "Name of the indicator"
+            scope: global
+      - name: "jednostka_prezentacji"
+        field:
+            element: text
+            label2: "Measure unit"
+            scope: global
+      - name: "wyjasnienia_metodologiczne"
+        field:
+            element: textarea
+            label2: "Description of the indicator"
+            scope: global
+      - name: "zrodlo_danych"
+        field:
+            element: text
+            label2: "Data sources"
+            scope: global
