@@ -51,7 +51,7 @@ prose:
             element: text
             label2: "Measure unit"
             scope: global
-      - name: "wyjasnienia_metodologiczne"
+      - name: "pl.wyjasnienia_metodologiczne"
         field:
             element: textarea
             label2: "Description of the indicator"
