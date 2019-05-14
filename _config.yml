@@ -61,4 +61,25 @@ prose:
             element: textarea
             label: "Methodological explanations"
             scope: global
-      
+    _metadane_krajowe:
+      - name: "pl_nazwa_wskaznika"
+        field:
+            element: text
+            label: "Nazwa wskaźnika"
+            scope: global
+      - name: "pl_wyjasnienia_metodologiczne"
+        field:
+            element: textarea
+            label: "Wyjaśnienia metodologiczne"
+            scope: global
+      - name: "en_nazwa_wskaznika"
+        field:
+            element: text
+            label: "Name of the indicator"
+            scope: global
+      - name: "en_wyjasnienia_metodologiczne"
+        field:
+            element: textarea
+            label: "Methodological explanations"
+            scope: global
+
