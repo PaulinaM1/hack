@@ -46,23 +46,23 @@ prose:
             element: text
             label: "Nazwa wskaźnika PL"
             label2: "Name of the indicator"
-            scope: global
+            scope: pl
       - name: "pl_wyjasnienia_metodologiczne"
         field:
             element: textarea
             label: "Wyjaśnienia metodologiczne PL"
             label2: "Methodological explanations"
-            scope: global
+            scope: pl
       - name: "en_nazwa_wskaznika"
         field:
             element: text
             label: "Nazwa wskaźnika EN"
             label2: "Name of the indicator"
-            scope: global
+            scope: en
       - name: "en_wyjasnienia_metodologiczne"
         field:
             element: textarea
             label: "Wyjaśnienia metodologiczne EN"
             label2: "Methodological explanations"
-            scope: global
+            scope: en
       
