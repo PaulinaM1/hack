@@ -43,11 +43,11 @@ prose:
     _metadane_globalne:
       - name: "pl"
         field:
-            element: text
+            element: object Object
             label2: "Name of the indicator"
             scope: global
       - name: "en"
         field:
-            element: textarea
+            element: object Object
             label2: "Description of the indicator"
             scope: global
