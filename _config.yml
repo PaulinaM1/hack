@@ -46,7 +46,7 @@ prose:
             element: text
             label2: "Name of the indicator"
             scope: global
-      - name: "pl.wyjasnienia_metodologiczne"
+      - name: "en"
         field:
             element: textarea
             label2: "Description of the indicator"
