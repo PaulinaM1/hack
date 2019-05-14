@@ -46,7 +46,7 @@ prose:
             element: text
             label2: "Name of the indicator"
             scope: global
-      - name: "jednostka_prezentacji"
+      - name: "pl/jednostka_prezentacji"
         field:
             element: text
             label2: "Measure unit"
