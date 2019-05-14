@@ -62,24 +62,24 @@ prose:
             label: "Methodological explanations"
             scope: global
     _metadane_krajowe:
-      - name: "pl_nazwa_wskaznika"
+      - name: "pl_priorytet"
         field:
             element: text
-            label: "Nazwa wskaźnika"
+            label: "Priorytet"
             scope: global
-      - name: "pl_wyjasnienia_metodologiczne"
+      - name: "pl_definicja"
         field:
             element: textarea
-            label: "Wyjaśnienia metodologiczne"
+            label: "Definicja"
             scope: global
-      - name: "en_nazwa_wskaznika"
+      - name: "en_priorytet"
         field:
             element: text
-            label: "Name of the indicator"
+            label: "Priorytet"
             scope: global
-      - name: "en_wyjasnienia_metodologiczne"
+      - name: "en_definicja"
         field:
             element: textarea
-            label: "Methodological explanations"
+            label: "Definicja"
             scope: global
 
