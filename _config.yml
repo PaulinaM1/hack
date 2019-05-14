@@ -41,13 +41,15 @@ prose:
   ignore: ['/assets', '/_includes', '/_layouts', '/scripts', '/sass', '/_posts',  '/_sass', '/_site', '/game', '/indicator', '404.html', '_config.yml', 'index.html', 'search.md' ]
   metadata:
     _metadane_globalne:
-      - name: "pl:nazwa_wskaznika"
+      - name: "nazwa_wskaznika"
         field:
             element: text
+            label: "Nazwa wskaźnika"
             label2: "Name of the indicator"
             scope: global
-      - name: "en:nazwa_wskaznika"
+      - name: "wyjasnienia_metodologiczne"
         field:
-            element: text
-            label2: "Description of the indicator"
+            element: textarea
+            label: "Wyjaśnienia metodologiczne"
+            label2: "Methodological explanations"
             scope: global
