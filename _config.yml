@@ -45,7 +45,7 @@ prose:
         field:
           label: "date"
           element: "text"
-          value: "CURRENT_DATE"
+          value: "CURRENT_DATETIME"
       - name: "pl_nazwa_wskaznika"
         field:
             element: text
