@@ -41,6 +41,11 @@ prose:
   ignore: ['/assets', '/_includes', '/_layouts', '/scripts', '/sass', '/_posts',  '/_sass', '/_site', '/game', '/indicator', '404.html', '_config.yml', 'index.html', 'search.md' ]
   metadata:
     _metadane_globalne:
+      - name: "date"
+        field:
+          label: "date"
+          element: "text"
+          value: "CURRENT_DATETIME"
       - name: "pl_nazwa_wskaznika"
         field:
             element: text
@@ -177,6 +182,11 @@ prose:
             label: "translation_id"
             scope: global
     _metadane_krajowe:
+      - name: "date"
+        field:
+          label: "date"
+          element: "text"
+          value: "CURRENT_DATETIME"
       - name: "pl_nazwa_wskaznika"
         field:
             element: text
