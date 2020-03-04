@@ -28,7 +28,7 @@ plugins:
   - jekyll-feed
 
 include:
-  - _site
+  - '/_site'
 
 collections:
   pages:
