@@ -27,6 +27,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
+include:
+  - '_site'
 
 collections:
   pages:
